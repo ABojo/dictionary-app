@@ -1,5 +1,14 @@
+import Container from "./components/Container/Container";
+import Header from "./components/Header/Header";
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Container>
+        <Header />
+      </Container>
+    </div>
+  );
 }
 
 export default App;
