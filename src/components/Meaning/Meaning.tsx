@@ -15,7 +15,7 @@ export default function Meaning({ meaningInfo }: MeaningProps) {
       <ul className={styles.meaning__list}>
         {definitions?.map((definition) => {
           return (
-            <li className={styles.meaning__item}>
+            <li className={styles.meaning__item} key={definition.definition}>
               <div>
                 <span className={styles.meaning__definition}>{definition.definition}</span>
                 {definition.example ? <span className={styles.meaning__example}>"{definition.example}"</span> : null}
