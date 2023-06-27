@@ -14,18 +14,19 @@ interface Phonetic {
 
 interface Definition {
   definition: string;
+  example?: string;
   synonyms: string[];
   antonyms: string[];
 }
 
-interface Meaning {
+export interface Meaning {
   partOfSpeech: string;
   definitions?: Definition[];
   synonyms: string[];
   antonyms: string[];
 }
 
-interface ErrorData {
+export interface ErrorData {
   title: string;
   message: string;
   resolution: string;
