@@ -8,9 +8,10 @@ import getAudioUrl from "../../utils/getAudio";
 
 interface DefinitionProps {
   query: UseQueryResult<WordData, unknown>;
+  setCurrentWord: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Definition({ query }: DefinitionProps) {
+export default function Definition({ query, setCurrentWord }: DefinitionProps) {
   const { isLoading, isError, isSuccess, data, error } = query;
 
   if (isLoading) {
@@ -56,7 +57,7 @@ export default function Definition({ query }: DefinitionProps) {
         </header>
         <div className={styles.meanings}>
           {data.meanings.map((meaning, i) => {
-            return <Meaning meaningInfo={meaning} key={i} />;
+            return <Meaning setCurrentWord={setCurrentWord} meaningInfo={meaning} key={i} />;
           })}
         </div>
         <div className={styles.source}>

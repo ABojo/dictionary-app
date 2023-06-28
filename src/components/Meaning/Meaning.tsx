@@ -3,9 +3,10 @@ import { Meaning as MeaningType } from "../../utils/getWord";
 
 interface MeaningProps {
   meaningInfo: MeaningType;
+  setCurrentWord: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Meaning({ meaningInfo }: MeaningProps) {
+export default function Meaning({ meaningInfo, setCurrentWord }: MeaningProps) {
   const { partOfSpeech, definitions, synonyms } = meaningInfo;
 
   return (
@@ -31,7 +32,14 @@ export default function Meaning({ meaningInfo }: MeaningProps) {
             {synonyms.map((synonym) => {
               return (
                 <li className={styles.synonyms__item} key={synonym}>
-                  <button className={styles.synonyms__button}>{synonym}</button>
+                  <button
+                    className={styles.synonyms__button}
+                    onClick={() => {
+                      setCurrentWord(synonym);
+                    }}
+                  >
+                    {synonym}
+                  </button>
                 </li>
               );
             })}
