@@ -5,7 +5,7 @@ interface License {
   url: string;
 }
 
-interface Phonetic {
+export interface Phonetic {
   text?: string;
   audio: string;
   sourceUrl?: string;
