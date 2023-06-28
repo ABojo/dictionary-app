@@ -29,9 +29,9 @@ export default function Meaning({ meaningInfo, setCurrentWord }: MeaningProps) {
         <div className={styles.synonyms}>
           <h3 className={styles.synonyms__heading}>Synonyms</h3>
           <ul className={styles.synonyms__list}>
-            {synonyms.map((synonym) => {
+            {synonyms.map((synonym, i) => {
               return (
-                <li className={styles.synonyms__item} key={synonym}>
+                <li className={styles.synonyms__item} key={i}>
                   <button
                     className={styles.synonyms__button}
                     onClick={() => {
