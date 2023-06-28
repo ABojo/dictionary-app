@@ -1,0 +1,141 @@
+.dropdown {
+  position: relative;
+
+  &__open {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: var(--fs-body-1);
+  }
+
+  &__arrow {
+    margin-left: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  &__menu {
+    transition: all 0.2s;
+    background-color: var(--color-bg);
+    position: absolute;
+    padding: 1.5rem;
+    width: 10rem;
+    border-radius: 0.75rem;
+    top: 2rem;
+    right: 0.5rem;
+    z-index: 1;
+    display: none;
+    box-shadow: 0px 5px 30px 0px var(--color-input);
+    -webkit-box-shadow: 0px 5px 30px 0px var(--color-input);
+
+    & > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &--dark {
+      background-color: var(--color-input);
+      box-shadow: 0px 5px 30px 0px var(--color-primary);
+      -webkit-box-shadow: 0px 5px 30px 0px var(--color-primary);
+    }
+  }
+
+  &--open &__menu {
+    display: block;
+  }
+
+  &--open &__arrow {
+    transform: rotate(180deg);
+  }
+
+  &__font {
+    background-color: transparent;
+    border: none;
+    display: block;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: var(--fs-body-1);
+    font-weight: 700;
+    color: var(--color-text);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &--sans {
+      font-family: "Inter";
+    }
+
+    &--serif {
+      font-family: "Lora";
+    }
+
+    &--mono {
+      font-family: "Mono";
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+
+  &__divider {
+    margin: 0 2rem;
+    height: 100%;
+    width: 1px;
+    background-color: var(--color-divider);
+  }
+}
+
+.theme {
+  display: flex;
+
+  &__moon--enabled {
+    color: var(--color-primary);
+  }
+}
+
+.toggle {
+  background-color: var(--color-text-light);
+  height: 1.4rem;
+  width: 2.5rem;
+  display: block;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+  margin-right: 1rem;
+
+  &::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    background-color: var(--color-bg);
+    transition: all 0.2s;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+  }
+
+  &--active {
+    background-color: var(--color-primary);
+
+    &::before {
+      background-color: var(--color-text);
+      left: 55%;
+    }
+  }
+
+  &__check {
+    display: none;
+  }
+
+  & svg use path {
+    color: var(--color-primary);
+    background-color: blue;
+  }
+}
