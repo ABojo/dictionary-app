@@ -30,7 +30,7 @@ export default function Meaning({ meaningInfo }: MeaningProps) {
           <ul className={styles.synonyms__list}>
             {synonyms.map((synonym) => {
               return (
-                <li className={styles.synonyms__item}>
+                <li className={styles.synonyms__item} key={synonym}>
                   <button className={styles.synonyms__button}>{synonym}</button>
                 </li>
               );
