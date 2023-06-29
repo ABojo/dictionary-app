@@ -13,6 +13,7 @@ function App() {
     queryKey: ["word", currentWord],
     queryFn: getWord,
     enabled: false,
+    retry: 1,
   });
 
   useEffect(() => {
