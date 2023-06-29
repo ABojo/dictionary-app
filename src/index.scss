@@ -34,6 +34,18 @@
   --fs-heading-3: 1.25rem;
   --fs-body-1: 1.125rem;
   --fs-body-2: 0.875rem;
+
+  @media (max-width: 31.25rem) {
+    --fs-heading-1: 3rem;
+    --fs-heading-2: 1.25rem;
+    --fs-heading-3: 1rem;
+    --fs-body-1: 1rem;
+    --fs-body-2: 0.85rem;
+  }
+
+  @media (max-width: 25rem) {
+    --fs-heading-1: 2rem;
+  }
 }
 
 :root.dark {

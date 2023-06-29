@@ -85,6 +85,10 @@
     height: 100%;
     width: 1px;
     background-color: var(--color-divider);
+
+    @media (max-width: 25rem) {
+      margin: 0 1rem;
+    }
   }
 }
 
