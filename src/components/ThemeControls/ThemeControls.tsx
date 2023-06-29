@@ -24,6 +24,7 @@ export default function ThemeControls() {
           {Object.entries(fonts).map(([fontClass, fontName]) => {
             return (
               <button
+                key={fontClass}
                 className={`${styles.dropdown__font} ${styles[`dropdown__font--${fontClass}`]}`}
                 onClick={() => {
                   setCurrentFont(fontName);
