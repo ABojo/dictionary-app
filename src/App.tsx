@@ -7,6 +7,7 @@ import { getWord } from "./utils/getWord";
 import { useQuery } from "react-query";
 
 function App() {
+  const inputHook = useState("");
   const [currentWord, setCurrentWord] = useState("");
 
   const query = useQuery({
@@ -27,12 +28,13 @@ function App() {
     <Container>
       <Header />
       <SearchBar
+        inputHook={inputHook}
         onSubmit={(currentValue: string) => {
           setCurrentWord(currentValue);
         }}
       />
       <main>
-        <Definition query={query} setCurrentWord={setCurrentWord} />
+        <Definition query={query} setCurrentWord={setCurrentWord} setInputValue={inputHook[1]} />
       </main>
     </Container>
   );

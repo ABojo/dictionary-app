@@ -3,10 +3,12 @@ import { useState } from "react";
 
 interface SearchBarProps {
   onSubmit: (keyword: string) => void;
+  inputHook: [string, React.Dispatch<React.SetStateAction<string>>];
 }
 
-export default function SearchBar({ onSubmit }: SearchBarProps) {
-  const [inputValue, setInputValue] = useState("");
+export default function SearchBar({ onSubmit, inputHook }: SearchBarProps) {
+  console.log(inputHook);
+  const [inputValue, setInputValue] = inputHook;
   const [isInvalid, setIsInvalid] = useState(false);
 
   function submitHandler(e: React.FormEvent) {
